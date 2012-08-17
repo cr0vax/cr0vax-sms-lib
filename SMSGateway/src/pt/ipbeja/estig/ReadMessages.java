@@ -74,7 +74,7 @@ public class ReadMessages {
             // Set the modem protocol to PDU (alternative is TEXT). PDU is the default, anyway...
             gateway.setProtocol(Protocols.PDU);
             //gateway.getATHandler().setStorageLocations("SMME");         // Sim Card Memory, Phone MEmory
-            gateway.getATHandler().setStorageLocations("SM");       // Sim Card Memory, não deteta recepção nem lê em cache
+            //gateway.getATHandler().setStorageLocations("SM");       // Sim Card Memory, não deteta recepção nem lê em cache
             //gateway.getATHandler().setStorageLocations("ME");       // Phone MEmory, lê em memória
             //gateway.getATHandler().setStorageLocations("MT");       // Mututal
             //gateway.getATHandler().setStorageLocations("SMMEMT");       // Mututal
@@ -114,11 +114,12 @@ public class ReadMessages {
             // Read Messages. The reading is done via the Service object and
             // affects all Gateway objects defined. This can also be more directed to a specific
             // Gateway - look the JavaDocs for information on the Service method calls.
-            msgList = new ArrayList<InboundMessage>();
-            Service.getInstance().readMessages(msgList, MessageClasses.ALL);
-            for (InboundMessage msg : msgList) {
-                System.out.println(msg);
-            }
+//            msgList = new ArrayList<InboundMessage>();
+//            Service.getInstance().readMessages(msgList, MessageClasses.ALL);
+//            for (InboundMessage msg : msgList) {
+//                //System.out.println(msg);
+//                gateway.deleteMessage(msg);
+//            }
             // Sleep now. Emulate real world situation and give a chance to the notifications
             // methods to be called in the event of message or voice call reception.
             System.out.println("Now Sleeping - Hit <enter> to stop service.");
