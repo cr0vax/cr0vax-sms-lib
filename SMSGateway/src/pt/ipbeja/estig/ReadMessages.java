@@ -74,9 +74,10 @@ public class ReadMessages {
             // Set the modem protocol to PDU (alternative is TEXT). PDU is the default, anyway...
             gateway.setProtocol(Protocols.PDU);
             //gateway.getATHandler().setStorageLocations("SMME");         // Sim Card Memory, Phone MEmory
-            //gateway.getATHandler().setStorageLocations("SM");       // Sim Card Memory, não deteta recepção nem lê em cache
+            gateway.getATHandler().setStorageLocations("SM");       // Sim Card Memory, não deteta recepção nem lê em cache
             //gateway.getATHandler().setStorageLocations("ME");       // Phone MEmory, lê em memória
             //gateway.getATHandler().setStorageLocations("MT");       // Mututal
+            //gateway.getATHandler().setStorageLocations("SMMEMT");       // Mututal
 
             // Do we want the Gateway to be used for Inbound messages?
             gateway.setInbound(true);
